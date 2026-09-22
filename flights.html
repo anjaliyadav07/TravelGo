@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Available Flights</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+background:#edf4ff;
+}
+
+.flight-card{
+background:white;
+border-radius:20px;
+padding:25px;
+margin-bottom:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.flight-card:hover{
+transform:translateY(-6px);
+}
+
+.price{
+font-size:30px;
+font-weight:bold;
+color:#0d6efd;
+}
+
+.logo{
+font-size:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container py-5">
+
+<h2 class="mb-4 fw-bold">
+
+Available Flights
+
+</h2>
+
+<div id="list"></div>
+
+</div>
+
+<script>
+
+const flights=JSON.parse(localStorage.getItem("searchResults"))||[];
+
+const list=document.getElementById("list");
+
+if(flights.length==0){
+
+list.innerHTML=`<div class="alert alert-danger">
+No Flights Found
+</div>`;
+
+}
+
+else{
+
+flights.forEach(f=>{
+
+list.innerHTML+=`
+
+<div class="flight-card">
+
+<div class="row align-items-center">
+
+<div class="col-md-2 text-center">
+
+<div class="logo">${f.logo}</div>
+
+<h5>${f.airline}</h5>
+
+<p>${f.flight}</p>
+
+</div>
+
+<div class="col-md-5">
+
+<h4>${f.from} ➜ ${f.to}</h4>
+
+<p>
+
+${f.depart}
+&nbsp;&nbsp;&nbsp;
+
+${f.arrive}
+
+</p>
+
+<p>
+
+${f.duration}
+
+|
+
+Non Stop
+
+</p>
+
+</div>
+
+<div class="col-md-2">
+
+⭐⭐⭐⭐⭐
+
+</div>
+
+<div class="col-md-3 text-end">
+
+<div class="price">
+
+₹${f.price}
+
+</div>
+
+<button
+class="btn btn-primary mt-2"
+onclick="book(${f.id})">
+
+Book Now
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+function book(id){
+
+localStorage.setItem("selectedFlight",id);
+
+window.location="passenger.html";
+
+}
+
+</script>
+
+</body>
+</html>

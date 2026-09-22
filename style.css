@@ -1,0 +1,631 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:#f4f7fb;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none}
+
+/* NAVBAR */
+
+.navbar{
+padding:18px 0;
+transition:.4s;
+background:rgba(0,0,0,.28);
+backdrop-filter:blur(12px);
+z-index:999;
+}
+
+.navbar.scrolled{
+background:#0d6efd;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.navbar-brand{
+font-size:30px;
+font-weight:700;
+color:#fff!important;
+}
+
+.navbar-brand i{
+margin-right:8px;
+color:#fff;
+}
+
+.nav-link{
+color:#fff!important;
+font-weight:500;
+margin-left:18px;
+position:relative;
+transition:.3s;
+}
+
+.nav-link::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-6px;
+width:0%;
+height:2px;
+background:#fff;
+transition:.35s;
+}
+
+.nav-link:hover::after{
+width:100%;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+position:relative;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.45));
+}
+
+.hero-content{
+position:relative;
+z-index:5;
+}
+
+.hero h1{
+font-size:70px;
+font-weight:800;
+color:#fff;
+margin-bottom:12px;
+animation:fadeUp 1s;
+}
+
+.hero p{
+color:#fff;
+font-size:22px;
+margin-bottom:35px;
+animation:fadeUp 1.3s;
+}
+
+/* BOOKING */
+
+.booking-card{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(18px);
+padding:35px;
+border-radius:22px;
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+transition:.3s;
+}
+
+.service-tabs{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+margin-bottom:20px;
+}
+
+.service{
+border:none;
+padding:12px 22px;
+background:#fff;
+border-radius:30px;
+font-weight:600;
+transition:.35s;
+}
+
+.service i{
+margin-right:8px;
+}
+
+.service:hover,
+.service.active{
+background:#0d6efd;
+color:#fff;
+transform:translateY(-4px);
+}
+
+.booking-card label{
+font-weight:600;
+margin-bottom:6px;
+display:block;
+color:#fff;
+}
+
+.form-control,
+.form-select{
+height:55px;
+border:none;
+border-radius:12px;
+}
+
+.form-control:focus,
+.form-select:focus{
+box-shadow:0 0 0 .2rem rgba(13,110,253,.25);
+}
+
+.search-btn{
+height:55px;
+border:none;
+border-radius:12px;
+background:#0d6efd;
+color:#fff;
+font-weight:700;
+transition:.35s;
+}
+
+.search-btn:hover{
+transform:translateY(-4px);
+background:#0056d6;
+}
+
+.quick-options{
+display:flex;
+justify-content:center;
+gap:22px;
+margin-top:25px;
+flex-wrap:wrap;
+color:#fff;
+font-size:15px;
+}
+
+.quick-options span i{
+margin-right:6px;
+color:#00ff84;
+}
+
+/* SERVICES */
+
+.services{
+margin-top:-60px;
+position:relative;
+z-index:10;
+}
+
+.service-card{
+background:#fff;
+padding:35px 20px;
+text-align:center;
+border-radius:18px;
+transition:.4s;
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+height:100%;
+}
+
+.service-card:hover{
+transform:translateY(-12px);
+box-shadow:0 20px 45px rgba(0,0,0,.15);
+}
+
+.service-card i{
+font-size:46px;
+color:#0d6efd;
+margin-bottom:18px;
+}
+
+.service-card h4{
+font-weight:700;
+margin-bottom:10px;
+}
+
+.service-card p{
+color:#666;
+}
+
+/* DESTINATIONS */
+
+.destination-card{
+overflow:hidden;
+border-radius:20px;
+position:relative;
+cursor:pointer;
+box-shadow:0 15px 40px rgba(0,0,0,.12);
+}
+
+.destination-card img{
+height:350px;
+width:100%;
+object-fit:cover;
+transition:.6s;
+}
+
+.destination-card:hover img{
+transform:scale(1.1);
+}
+
+.destination-content{
+position:absolute;
+left:0;
+right:0;
+bottom:0;
+padding:25px;
+background:linear-gradient(transparent,rgba(0,0,0,.92));
+color:#fff;
+}
+
+.destination-content h4{
+font-size:30px;
+font-weight:700;
+}
+
+.destination-content p{
+margin-bottom:15px;
+}
+
+/* OFFERS */
+
+.offer-box{
+padding:70px;
+border-radius:22px;
+background:linear-gradient(135deg,#0d6efd,#00b4ff);
+color:#fff;
+text-align:center;
+box-shadow:0 15px 40px rgba(13,110,253,.25);
+}
+
+.offer-box h2{
+font-size:48px;
+font-weight:800;
+margin-bottom:15px;
+}
+
+.offer-box p{
+font-size:22px;
+margin-bottom:20px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0);}
+}
+
+/* HOLIDAY PACKAGES */
+
+.package-card{
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 12px 35px rgba(0,0,0,.08);
+transition:.4s;
+height:100%;
+}
+
+.package-card:hover{
+transform:translateY(-12px);
+box-shadow:0 20px 45px rgba(0,0,0,.15);
+}
+
+.package-card img{
+width:100%;
+height:230px;
+object-fit:cover;
+transition:.5s;
+}
+
+.package-card:hover img{
+transform:scale(1.08);
+}
+
+.package-card h5{
+font-weight:700;
+margin-bottom:8px;
+}
+
+.package-card h4{
+color:#0d6efd;
+font-weight:700;
+margin:15px 0;
+}
+
+/* WHY */
+
+.why-card{
+background:#fff;
+padding:35px 25px;
+border-radius:20px;
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+transition:.35s;
+height:100%;
+}
+
+.why-card:hover{
+transform:translateY(-10px);
+background:#0d6efd;
+color:#fff;
+}
+
+.why-card i{
+font-size:45px;
+margin-bottom:18px;
+color:#0d6efd;
+transition:.35s;
+}
+
+.why-card:hover i{
+color:#fff;
+}
+
+/* TESTIMONIAL */
+
+.testimonial-card{
+background:#fff;
+padding:45px;
+border-radius:22px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+max-width:800px;
+margin:auto;
+}
+
+.testimonial-card img{
+width:100px;
+height:100px;
+border-radius:50%;
+object-fit:cover;
+margin:auto;
+border:5px solid #0d6efd;
+}
+
+.testimonial-card p{
+font-size:17px;
+color:#666;
+}
+
+/* STATS */
+
+.stats{
+background:linear-gradient(135deg,#0d6efd,#0099ff);
+color:#fff;
+}
+
+.stats h2{
+font-size:55px;
+font-weight:800;
+}
+
+.stats p{
+font-size:18px;
+margin-top:10px;
+}
+
+/* NEWSLETTER */
+
+.newsletter{
+background:#eef6ff;
+}
+
+.newsletter-box{
+background:#fff;
+padding:60px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.newsletter h2{
+font-weight:700;
+}
+
+.newsletter input{
+height:60px;
+border-radius:14px;
+}
+
+.newsletter button{
+border-radius:14px;
+}
+
+/* FOOTER */
+
+.footer{
+background:#08111f;
+color:#ddd;
+}
+
+.footer h3,
+.footer h5{
+color:#fff;
+margin-bottom:20px;
+}
+
+.footer ul{
+padding:0;
+}
+
+.footer li{
+list-style:none;
+margin-bottom:12px;
+}
+
+.footer a{
+color:#bbb;
+transition:.3s;
+}
+
+.footer a:hover{
+color:#fff;
+padding-left:6px;
+}
+
+.social a{
+display:inline-flex;
+width:42px;
+height:42px;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:#0d6efd;
+color:#fff;
+margin-right:10px;
+transition:.35s;
+}
+
+.social a:hover{
+transform:translateY(-5px) rotate(360deg);
+}
+
+.footer hr{
+border-color:#333;
+margin:35px 0;
+}
+
+/* SCROLL BUTTON */
+
+#topBtn{
+position:fixed;
+right:25px;
+bottom:25px;
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:#0d6efd;
+color:#fff;
+font-size:22px;
+cursor:pointer;
+display:none;
+z-index:999;
+transition:.3s;
+box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+#topBtn:hover{
+transform:translateY(-5px);
+background:#0056d6;
+}
+
+/* BUTTONS */
+
+.btn-primary{
+transition:.35s;
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(13,110,253,.35);
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#0d6efd;
+border-radius:20px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+
+.hero h1{
+font-size:48px;
+}
+
+.booking-card{
+padding:25px;
+}
+
+.offer-box{
+padding:45px;
+}
+
+.destination-card img{
+height:270px;
+}
+
+.newsletter-box{
+padding:35px;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+height:auto;
+padding:120px 0 80px;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.service-tabs{
+gap:10px;
+}
+
+.service{
+padding:10px 15px;
+font-size:14px;
+}
+
+.offer-box h2{
+font-size:35px;
+}
+
+.stats h2{
+font-size:36px;
+}
+
+.footer{
+text-align:center;
+}
+
+.social{
+margin-bottom:25px;
+}
+
+}
+
+@media(max-width:576px){
+
+.hero h1{
+font-size:30px;
+}
+
+.booking-card{
+padding:18px;
+}
+
+.destination-card img{
+height:220px;
+}
+
+.package-card img{
+height:180px;
+}
+
+.offer-box{
+padding:30px;
+}
+
+.offer-box h2{
+font-size:28px;
+}
+
+.newsletter-box{
+padding:25px;
+}
+
+.stats h2{
+font-size:30px;
+}
+
+}
